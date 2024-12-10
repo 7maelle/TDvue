@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo Niv 1</title>
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <h3> Ex5</h3>
+    <div id="app5">
+        <p v-if="isTrue">  {{ message1}}  </p>
+        <p v-else>  {{message2}}  </p>
+    </div>
+
+  
+<script>
+    //ex5
+    new Vue({
+        el: '#app5',
+        data: {
+            message1: 'la condition est vraie' ,
+            message2: 'la condition est fausse',
+            isTrue: true ,
+        },
+
+    });
+
+
+
+
+
+</script>
+</body>
+</html>

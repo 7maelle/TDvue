@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message de Bienvenue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="changerLangue('en')">Anglais</button>
+        <button @click="changerLangue('fr')">Français</button>
+        <button @click="changerLangue('es')">Espagnol</button>
+        <p v-if="langue === 'en'">Welcome to my website!</p>
+        <p v-if="langue === 'fr'">Bienvenue sur mon site web!</p>
+        <p v-if="langue === 'es'">¡Bienvenido a mi sitio web!</p>
+       
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                langue: 'en' 
+            },
+            methods: {
+                changerLangue(langue) {
+                    this.langue = langue;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

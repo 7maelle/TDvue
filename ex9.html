@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Fruits</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+   <h5>EX9</h5>
+    <div id="app">
+        <ul>
+            <li v-for="fruit in fruits" :key="fruit.id">
+                {{ `Le ${fruit.nom} a une longueur de ${fruit.nom.length} caractères.` }}
+            </li>
+        </ul>
+    </div>
+
+
+</div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                fruits: [
+                    { id: 1, nom: 'pomme' },
+                    { id: 2, nom: 'fraise' },
+                    { id: 3, nom: 'mangue' },
+                    { id: 4, nom: 'papaye' },
+                    { id: 5, nom: 'noix de coco' }
+                ]
+            }
+        });
+
+
+       
+
+
+    </script>
+</body>
+</html>

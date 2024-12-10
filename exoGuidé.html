@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo guidé</title>
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <h3>Ex1</h3>
+
+    <div id="app">
+    <button v-on:click="incrementeCounter">Cliquez-moi</button>
+    <p>Vous avez cliqué {{ compteur }} fois</p>
+</div>
+
+<h3> EX2</h3>
+<div id="app2">
+    <textarea v-model="message" type="text"></textarea>
+    <p> votre message : {{message}}</p>
+</div>
+
+<h3>EX3</3>
+<div id="app3">
+    <input type="number" v-model="montantHT">
+    <p>Montant TTC: {{calculTVA.toFixed(2)}} €</p>
+</div>
+
+
+<h3>EX4</h3>
+<div id="app4">
+    <textarea v-model="texte"></textarea>
+    <p>Nombre de mots : {{ compteur}}</p>
+  </div>
+
+
+
+<script>
+    //ex1
+    new Vue({
+        el: '#app',
+        data: {
+            compteur: 0
+        },
+        methods: {
+            incrementeCounter() {
+                this.compteur++;
+            }
+        }
+    });
+
+
+    //ex2
+    new Vue({
+        el: '#app2',
+        data: {
+            message: ''
+        },
+    
+    });
+
+
+    //ex3
+    new Vue({
+            el: '#app3',
+            data: {
+                montantHT: 0
+            },
+            computed: {
+                calculTVA(){
+                    return this.montantHT * 1.20 
+                }
+            }
+        });
+
+    
+    //ex4
+    new Vue({
+            el: '#app4',
+            data: {
+                compteur: 0 ,
+                texte: ''
+            },
+            watch : {
+                texte (Nouvtexte) {
+                    this.compteur = Nouvtexte.split(' ').filter(n => n != '').length;
+            }
+        }
+        });
+
+
+</script>
+</body>
+</html>
